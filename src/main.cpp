@@ -114,20 +114,13 @@ void Core0Monitor(void *pvParameters)
       if (input > 150 && input > (setpoint - 15))
       {
         output = 255;
-        // if (input < (setpoint - 3))
-        // {
-        // }
-        // else
-        // {
-        //   output = 140;
-        // }
       }
       else
       {
         output = 255;
       }
     }
-    // pid.Compute(); // Calcula PID
+    // pid.Compute(); // Quando implementado o PID é aqui que executa ele
     analogWrite(pwmPin, output); // Aplica no PWM
 
     Serial.print("PWM:");
@@ -179,8 +172,6 @@ void Core1Movimento(void *pvParameters)
     {
       speedAnt = 0;
     }
-
-    // vTaskDelay(pdMS_TO_TICKS(1));
   }
 }
 
